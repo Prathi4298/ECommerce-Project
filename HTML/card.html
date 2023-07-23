@@ -1,111 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order-Now</title>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" type="text/css" href="../CSS/CSS/style.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link href="../CSS/bootstrap.min.css" rel="stylesheet" />
+    <style>
+      .card.product-1{
+        height: 80%;
+      }
+      .card.product-1 img {
+        height: 50%;
+      }
+      .row-eq-height {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      
+      .row-eq-height .card {
+        width: 100%;
+      }
+      
+      .row-eq-height .card .card-body {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      #Wid{
+        width: 30%;
+        text-align: center;
+      }
+
+    </style>
 </head>
+
 <body>
     <div class="container">
-        <div class="row">
+        <div class="row align-items-center">
             <div class="col-md-10 text-center p-1 text-danger">
                 <h2><u>My Shopping Cart</u></h2>
             </div>
-            <div class="col-md-2 text-left text-danger p-4 ">
-                <i class='bx bx-exit'></i>
-                <a href="./Home.html" class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Home </a>
+            <div class="col-md-2 text-left text-danger p-4">
+                <i class="bx bx-exit"></i>
+                <a href="./Home.html" class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Home</a>
             </div>
         </div>
     </div>
-    <div class="products-container">
-        <div class="product-item">
-                <img src="Hoody.jpeg.jpeg" class="card-img-top ">
-                        <h5 class="card-title">Hoody/h5>
-                        <div class="cart-price">₹1200</div>
-                        <input type="number" class="cart-quantity" placeholder="Quantity"/>
-                        <div>Total</div>
-                        <div class="total-price">₹0</div>
-                        <button type="submit" class="btn btn-danger">Order-Now</button>
-                        <i class="bx-bx-x-circle" id="close-cart"></i>
-                    </div>
-                    <div class="product-item">
-                            <img src="Jeans.jpeg.jpeg" class="card-img-top ">
-                                    <h5 class="card-title">Jeans</h5>
-                                    <div class="cart-price">₹1500</div>
-                                    <input type="number" class="cart-quantity" placeholder="Quantity"/>
-                                    <div>Total</div>
-                                    <div class="total-price">₹0</div>
-                                    <button type="submit" class="btn btn-danger">Order-Now</button>
-                                    <i class="bx-bx-x-circle" id="close-cart"></i>
-                                </div>
-                                <div class="product-item">
-                                        <img src="Shoe.png.jpeg" class="card-img-top ">
-                                                <h5 class="card-title">Shoe</h5>
-                                                <div class="cart-price">₹800</div>
-                                                <input type="number" class="cart-quantity" placeholder="Quantity"/>
-                                                <div>Total</div>
-                                                <div class="total-price">₹0</div>
-                                                <button type="submit" class="btn btn-danger">Order-Now</button>
-                                                <i class="bx-bx-x-circle" id="close-cart"></i>
-                                            </div>
-                                                <div class="product-item">
-                                                        <img src="T.shirt.jpg.jpeg" class="card-img-top ">
-                                                                <h5 class="card-title">Tshirt</h5>
-                                                                <div class="cart-price">₹800</div>
-                                                                <input type="number" class="cart-quantity" placeholder="Quantity"/>
-                                                                <div>Total</div>
-                                                                <div class="total-price">₹0</div>
-                                                                <button type="submit" class="btn btn-danger">Order-Now</button>
-                                                                <i class="bx-bx-x-circle" id="close-cart"></i>
-                                                            </div>
+    <br>
+    <br>
+    <br>
 
-                                                                <div class="product-item">
-                                                                        <img src="Bag.jpg.jpeg" class="card-img-top ">
-                                                                                <h5 class="card-title">Bag</h5>
-                                                                                <div class="cart-price">₹800</div>
-                                                                                <input type="number" class="cart-quantity" placeholder="Quantity"/>
-                                                                                <div>Total</div>
-                                                                                <div class="total-price">₹0</div>
-                                                                                <button type="submit" class="btn btn-danger">Order-Now</button>
-                                                                                <i class="bx-bx-x-circle" id="close-cart"></i>
-                                                                            </div>
+    <div class="container">
+        <div class="row row-eq-height" id="produt">
+            
+        </div>
+    </div>
 
-                                                                                <div class="product-item">
-                                                                                        <img src="bluetooth.jpg.jpeg" class="card-img-top ">
-                                                                                                <h5 class="card-title">Bluetooth</h5>
-                                                                                                <div class="cart-price">₹800</div>
-                                                                                                <input type="number" class="cart-quantity" placeholder="Quantity"/>
-                                                                                                <div>Total</div>
-                                                                                                <div class="total-price">₹0</div>
-                                                                                                <button type="submit" class="btn btn-danger">Order-Now</button>
-                                                                                                <i class="bx-bx-x-circle" id="close-cart"></i>
-                                                                                            </div>
+    <div class="container" id="Wid">
+        <div class="row" >
+            <div class="col-md-12 text-center bg-dark ">
+                <h3 class="text-info">Total: <span id="total"></span></h3>
+                <button id="orderButton" class="btn btn-primary" onclick="Order()"><br>Order Now</button>
+                <p class="text-info" id="emptyCartMsg" style="display: none;">Your cart is empty.</p>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
 
-                                                                                                <div class="product-item">
-                                                                                                        <img src="Bottle.jpeg.jpeg" class="card-img-top ">
-                                                                                                                <h5 class="card-title">Bottle</h5>
-                                                                                                                <div class="cart-price">₹800</div>
-                                                                                                                <input type="number" class="cart-quantity" placeholder="Quantity"/>
-                                                                                                                <div>Total</div>
-                                                                                                                <div class="total-price">₹0</div>
-                                                                                                                <button type="submit" class="btn btn-danger">Order-Now</button>
-                                                                                                                <i class="bx-bx-x-circle" id="close-cart"></i>
-                                                                                                            </div>
-                                                                                                            <div class="products-container">
-                                                                                                                <div class="product-item">
-                                                                                                                        <img src="Hat.jpeg.jpeg" class="card-img-top ">
-                                                                                                                                <h5 class="card-title">Hat</h5>
-                                                                                                                                <div class="cart-price">₹800</div>
-                                                                                                                                <input type="number" class="cart-quantity" placeholder="Quantity"/>
-                                                                                                                                <div>Total</div>
-                                                                                                                                <div class="total-price">₹0</div>
-                                                                                                                                <button type="submit" class="btn btn-danger">Order-Now</button>
-                                                                                                                                <i class="bx-bx-x-circle" id="close-cart"></i>
-                                                                                                                            </div>                                  
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="../JS/bootstrap.bundle.min.js"></script>
+    <script src="../JS/script.js" defer></script>
 </body>
 </html>
